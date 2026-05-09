@@ -1,0 +1,44 @@
+# Program to count character types in a paragraph
+
+paragraph = input("Enter a paragraph: ")
+
+upper = lower = digit = space = special = 0
+
+# Loop through each character
+for ch in paragraph:
+    if ch.isupper():
+        upper += 1
+    elif ch.islower():
+        lower += 1
+    elif ch.isdigit():
+        digit += 1
+    elif ch.isspace():
+        space += 1
+    else:
+        special += 1
+
+# Store results in dictionary
+result = {
+    "Uppercase": upper,
+    "Lowercase": lower,
+    "Digits": digit,
+    "Spaces": space,
+    "Special Characters": special
+}
+
+# Sort in descending order
+sorted_result = sorted(result.items(), key=lambda x: x[1], reverse=True)
+
+#output
+#Enter a paragraph: Hello World 123!
+
+#Character Count:
+#Lowercase : 8
+#Spaces : 2
+#Uppercase : 2
+#Digits : 3
+#Special Characters : 1
+
+print("\nCharacter Count:")
+for key, value in sorted_result:
+    print(key, ":", value)
