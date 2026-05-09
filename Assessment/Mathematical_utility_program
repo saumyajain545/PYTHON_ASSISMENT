@@ -1,0 +1,43 @@
+import math
+
+while True:
+    print("1. Factorial")
+    print("2. Prime Check")
+    print("3. Armstrong Check")
+    print("4. Exit")
+
+    choice = int(input("Enter choice: "))
+
+    if choice == 1:
+        n = int(input("Enter number: "))
+        print(math.factorial(n))
+
+    elif choice == 2:
+        n = int(input("Enter number: "))
+        flag = True
+
+        for i in range(2, n):
+            if n % i == 0:
+                flag = False
+                break
+
+        print("Prime" if flag else "Not Prime")
+
+    elif choice == 3:
+        print("Armstrong logic here")
+
+    else:
+        break
+
+'''
+output
+1. Factorial
+2. Prime Check
+3. Armstrong Check
+4. Exit
+
+Enter choice: 1
+Enter number: 5
+
+120
+'''
